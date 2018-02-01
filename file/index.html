@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="generate_phpfile_withGIFmimetype.php">Сгенерировать файл</a>
+<h1>Форма ссылается на уязвимый файл</h1>
+<form action="store.php" enctype="multipart/form-data" method="post">
+    <input type="file" name="file">
+    <input type="submit">
+</form>
+<a href="vulnerable_script.php?filename=uploads/image.png">Эксплуатировать</a>
+
+
+<h1>Форма ссылается на не подверженной этой уязвимости файл</h1>
+<form action="store2.php" enctype="multipart/form-data" method="post">
+    <input type="file" name="file">
+    <input type="submit">
+</form>
+
+<a href="vulnerable_script.php?filename=uploads/NEWimage.png">Попробовать Эксплуатировать</a>
+</body>
+</html>
